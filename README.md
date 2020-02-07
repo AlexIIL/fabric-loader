@@ -36,7 +36,7 @@ There are several branches:
 
 Work in progress: I haven't got these to a decent enough state to want to talk about them quite yet. (In particular I need to know if these are even feasible)
 
-#### dev/0.7-alexiil-json-apis
+#### [dev/0.7-alexiil-json-apis](https://github.com/AlexIIL/fabric-loader/tree/dev/0.7-alexiil-json-apis)
 A way for one mod to declare a class or interface as an API, and for a (single) other mod to implement that API.
 
 Client code can use `FabricLoader.getApiInstance(Class)` to get the current implementation.
