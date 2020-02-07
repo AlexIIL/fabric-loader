@@ -23,6 +23,11 @@ PR [#186](https://github.com/FabricMC/fabric-loader/pull/186)
 
 This fixed a small bug where the error gui didn't log the errors.
 
+#### (work-in-progress) [dev/0.7-alexiil-rem-contradiction](https://github.com/AlexIIL/fabric-loader/tree/dev/0.7-alexiil-rem-contradiction)
+PR (WIP)
+
+This removes the ContradictionException from stacktraces, as it's basically useless.
+
 ### Misc
 
 #### The loader GUI
