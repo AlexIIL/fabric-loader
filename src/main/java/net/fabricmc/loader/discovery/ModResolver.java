@@ -140,7 +140,7 @@ public class ModResolver {
 							solver.addAtMost(versionVec, 1);
 						}
 					} catch (ContradictionException e) {
-						throw new ModResolutionException("Could not resolve valid mod collection (at: adding mod " + id + ")", e);
+						throw new ModResolutionException("Could not resolve valid mod collection (at: adding mod " + id + ")");
 					}
 				}
 
@@ -166,7 +166,7 @@ public class ModResolver {
 						try {
 							solver.addClause(new VecInt(clause));
 						} catch (ContradictionException e) {
-							throw new ModResolutionException("Could not find required mod: " + mod.getInfo().getId() + " requires " + dep, e);
+							throw new ModResolutionException("Could not find required mod: " + mod.getInfo().getId() + " requires " + dep);
 						}
 					}
 
@@ -187,7 +187,7 @@ public class ModResolver {
 								solver.addClause(new VecInt(new int[] { -modClauseId, -m }));
 							}
 						} catch (ContradictionException e) {
-							throw new ModResolutionException("Found conflicting mods: " + mod.getInfo().getId() + " breaks " + dep, e);
+							throw new ModResolutionException("Found conflicting mods: " + mod.getInfo().getId() + " breaks " + dep);
 						}
 					}
 				}
