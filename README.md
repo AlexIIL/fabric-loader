@@ -13,12 +13,12 @@ This contains several branches which might be of interest:
 
 ### PR's
 
-#### (open) alexiil-package-loading
+#### (open) [alexiil-package-loading](https://github.com/AlexIIL/fabric-loader/tree/alexiil-package-loading)
 PR [#196](https://github.com/FabricMC/fabric-loader/pull/196).
 
 This primarily implements the "Sealed" attribute for packages.
 
-#### (merged) alexiil-fixed-gui-error-log
+#### (merged) [alexiil-fixed-gui-error-log](https://github.com/AlexIIL/fabric-loader/tree/alexiil-fixed-gui-error-log)
 PR [#186](https://github.com/FabricMC/fabric-loader/pull/186)
 
 This fixed a small bug where the error gui didn't log the errors.
