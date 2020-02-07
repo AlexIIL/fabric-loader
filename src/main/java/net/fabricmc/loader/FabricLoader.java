@@ -37,6 +37,9 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.loader.api.LanguageAdapter;
 import net.fabricmc.loader.api.MappingResolver;
 import net.fabricmc.loader.api.SemanticVersion;
+import net.fabricmc.loader.api.metadata.ModApi;
+import net.fabricmc.loader.api.metadata.ModApiImpl;
+import net.fabricmc.loader.api.metadata.ModApi.ApiImpl;
 import net.fabricmc.loader.discovery.ClasspathModCandidateFinder;
 import net.fabricmc.loader.discovery.DirectoryModCandidateFinder;
 import net.fabricmc.loader.discovery.ModCandidate;
@@ -66,8 +69,9 @@ public class FabricLoader implements net.fabricmc.loader.api.FabricLoader {
 	protected final Map<String, ModContainer> modMap = new HashMap<>();
 	protected List<ModContainer> mods = new ArrayList<>();
 
-	private final Map<String, LanguageAdapter> adapterMap = new HashMap<>();
+	protected final Map<String, LanguageAdapter> adapterMap = new HashMap<>();
 	private final EntrypointStorage entrypointStorage = new EntrypointStorage();
+	private final ApiManager apiManager = new ApiManager();
 
 	private boolean frozen = false;
 
@@ -209,6 +213,7 @@ public class FabricLoader implements net.fabricmc.loader.api.FabricLoader {
 		postprocessModMetadata();
 		setupLanguageAdapters();
 		setupMods();
+		apiManager.defineApis(Collections.emptyMap());
 	}
 
 	public boolean hasEntrypoints(String key) {
@@ -245,6 +250,21 @@ public class FabricLoader implements net.fabricmc.loader.api.FabricLoader {
 	@Override
 	public boolean isModLoaded(String id) {
 		return modMap.containsKey(id);
+	}
+
+	@Override
+	public <T> T getApiInstance(Class<T> apiClass) throws IllegalArgumentException {
+		return apiManager.getApiInstance(apiClass);
+	}
+
+	@Override
+	public ApiImpl getApiMapping(ModApi api) {
+		return apiManager.getApiMapping(api);
+	}
+
+	@Override
+	public String getApiImplementor(ModApi api) {
+		return apiManager.getApiImplementor(api);
 	}
 
 	@Override

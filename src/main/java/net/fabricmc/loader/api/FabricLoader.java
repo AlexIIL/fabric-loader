@@ -17,6 +17,9 @@
 package net.fabricmc.loader.api;
 
 import net.fabricmc.api.EnvType;
+import net.fabricmc.loader.api.metadata.ModApi;
+import net.fabricmc.loader.api.metadata.ModApi.ApiImpl;
+import net.fabricmc.loader.api.metadata.ModApiImpl;
 
 import java.io.File;
 import java.util.Collection;
@@ -65,6 +68,23 @@ public interface FabricLoader {
 	 * @return Whether or not the mod is present in this FabricLoader instance.
 	 */
 	boolean isModLoaded(String id);
+
+	/**
+	 * Gets the implementation of the given API.
+	 * @return The implementation of the given API.
+	 * @throws IllegalArgumentException if the given class hasn't been declared as an API by the mod that contains it.
+	 */
+	<T> T getApiInstance(Class<T> apiClass) throws IllegalArgumentException;
+
+	/**
+	 * @return The implementation definition for the given api mapping.
+	 */
+	ApiImpl getApiMapping(ModApi api);
+
+	/**
+	 * @return The modid that is providing the given {@link ModApi} instance.
+	 */
+	String getApiImplementor(ModApi api);
 
 	/**
 	 * Checks if Fabric Loader is currently running in a "development"

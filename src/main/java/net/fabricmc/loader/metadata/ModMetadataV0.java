@@ -22,6 +22,8 @@ import com.google.gson.*;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.loader.api.metadata.ContactInformation;
 import net.fabricmc.loader.api.metadata.CustomValue;
+import net.fabricmc.loader.api.metadata.ModApi;
+import net.fabricmc.loader.api.metadata.ModApiImpl;
 import net.fabricmc.loader.api.metadata.ModDependency;
 import net.fabricmc.loader.api.Version;
 import org.apache.logging.log4j.Logger;
@@ -222,6 +224,16 @@ public class ModMetadataV0 extends AbstractModMetadata implements LoaderModMetad
 	@Override
 	public Collection<ModDependency> getBreaks() {
 		return conflicts.toModDependencies();
+	}
+
+	@Override
+	public Collection<? extends ModApi> getApis() {
+		return Collections.emptyList();
+	}
+
+	@Override
+	public Collection<? extends ModApiImpl> getApiImpls() {
+		return Collections.emptyList();
 	}
 
 	public static class Mixins {

@@ -22,6 +22,8 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.loader.api.Version;
 import net.fabricmc.loader.api.metadata.ContactInformation;
 import net.fabricmc.loader.api.metadata.CustomValue;
+import net.fabricmc.loader.api.metadata.ModApi;
+import net.fabricmc.loader.api.metadata.ModApiImpl;
 import net.fabricmc.loader.api.metadata.ModDependency;
 import net.fabricmc.loader.util.version.VersionParsingException;
 import net.fabricmc.loader.util.version.VersionPredicateParser;
@@ -225,6 +227,16 @@ public class ModMetadataV1 extends AbstractModMetadata implements LoaderModMetad
 	@Override
 	public Collection<ModDependency> getBreaks() {
 		return breaks.dependencies;
+	}
+
+	@Override
+	public Collection<ModApi> getApis() {
+		return Collections.emptySet();
+	}
+
+	@Override
+	public Collection<ModApiImpl> getApiImpls() {
+		return Collections.emptySet();
 	}
 
 	public static class DependencyContainer {

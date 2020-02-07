@@ -28,6 +28,8 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.loader.api.Version;
 import net.fabricmc.loader.api.metadata.ContactInformation;
 import net.fabricmc.loader.api.metadata.CustomValue;
+import net.fabricmc.loader.api.metadata.ModApi;
+import net.fabricmc.loader.api.metadata.ModApiImpl;
 import net.fabricmc.loader.api.metadata.ModDependency;
 import net.fabricmc.loader.api.metadata.ModMetadata;
 import net.fabricmc.loader.api.metadata.Person;
@@ -59,6 +61,10 @@ class BuiltinMetadataWrapper extends AbstractModMetadata implements LoaderModMet
 	public Collection<ModDependency> getConflicts() { return parent.getConflicts(); }
 	@Override
 	public Collection<ModDependency> getBreaks() { return parent.getBreaks(); }
+	@Override
+	public Collection<? extends ModApi> getApis() { return parent.getApis(); }
+	@Override
+	public Collection<? extends ModApiImpl> getApiImpls() { return parent.getApiImpls(); }
 	@Override
 	public String getName() { return parent.getName(); }
 	@Override

@@ -28,6 +28,8 @@ import java.util.TreeMap;
 import net.fabricmc.loader.api.Version;
 import net.fabricmc.loader.api.metadata.ContactInformation;
 import net.fabricmc.loader.api.metadata.CustomValue;
+import net.fabricmc.loader.api.metadata.ModApi;
+import net.fabricmc.loader.api.metadata.ModApiImpl;
 import net.fabricmc.loader.api.metadata.ModDependency;
 import net.fabricmc.loader.api.metadata.ModMetadata;
 import net.fabricmc.loader.api.metadata.Person;
@@ -128,6 +130,10 @@ public final class BuiltinModMetadata extends AbstractModMetadata {
 	public Collection<ModDependency> getConflicts() { return Collections.emptyList(); }
 	@Override
 	public Collection<ModDependency> getBreaks() { return Collections.emptyList(); }
+	@Override
+	public Collection<? extends ModApi> getApis() { return Collections.emptyList(); }
+	@Override
+	public Collection<? extends ModApiImpl> getApiImpls() { return Collections.emptyList(); }
 	@Override
 	public boolean containsCustomValue(String key) { return false; }
 	@Override

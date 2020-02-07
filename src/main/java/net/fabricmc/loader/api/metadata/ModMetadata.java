@@ -37,6 +37,9 @@ public interface ModMetadata {
 	Collection<ModDependency> getConflicts();
 	Collection<ModDependency> getBreaks();
 
+	Collection<? extends ModApi> getApis();
+	Collection<? extends ModApiImpl> getApiImpls();
+
 	String getName();
 	String getDescription();
 	Collection<Person> getAuthors();
