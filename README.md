@@ -28,6 +28,11 @@ PR (WIP)
 
 This removes the ContradictionException from stacktraces, as it's basically useless.
 
+#### (open) [alexiil-mixin-mod-names](https://github.com/AlexIIL/fabric-loader/tree/alexiil-mixin-mod-names)
+PR [#271](https://github.com/FabricMC/fabric-loader/pull/271).
+
+This makes mixin log the modid that provided a mixin.
+
 ### Misc
 
 #### The loader GUI
