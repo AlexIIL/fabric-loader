@@ -42,7 +42,7 @@ There are several branches:
 * [alexiil-full-gui](https://github.com/AlexIIL/fabric-loader/tree/alexiil-full-gui) The merged GUI code.
 * [alexiil-additional-gui](https://github.com/AlexIIL/fabric-loader/tree/alexiil-additional-gui) The original GUI code, with more features.
 
-### Experimental fabric.mod.json schemaVersion 2 branches
+### Experimental fabric.mod.json additions (schemaVersion 2)
 
 Work in progress: I haven't got these to a decent enough state to want to talk about them quite yet. (In particular I need to know if these are even feasible)
 
