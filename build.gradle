@@ -38,8 +38,8 @@ repositories {
 }
 
 dependencies {
-	minecraft "com.mojang:minecraft:1.14.4"
-	mappings "net.fabricmc:yarn:1.14.4+build.1"
+    minecraft "com.mojang:minecraft:1.16-pre4"
+    mappings "net.fabricmc:yarn:1.16-pre4+build.1:v2"
 
 	// Minecraft's JAR uses these annotations
 	compile 'com.google.code.findbugs:jsr305:3.0.2'
